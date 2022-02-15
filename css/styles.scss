@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.news {
+    &-list {
+      max-width: 960px;
+      width: 100%;
+      min-width: 320px;
+      margin: 40px auto;
+    }
+    &-list-item {
+      width: 100%;
+      padding: 10px;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 5px grey;
+      border-radius: 5px;
+    }
+}
+
+.li{
+  box-shadow: 0 0 7px 0 rgba(0,0,0, .4);
+  margin-bottom: 20px;
+  // transition: all 0.5s;
+  &__top {
+    position: relative;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+  }
+  &__like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    opacity: 0.5;
+    border: 1px solid #555;
+    padding: 5px;
+    border-radius: 50%;
+    &:hover {
+      opacity: 1;
+    }
+    &.active {
+      opacity: 1;
+      a {
+        color: yellow;
+      }
+    } 
+    a {
+      color: #555;
+    }
+  }
+  &__title {
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    padding: 55px 15px;
+  }
+  &__bottom {
+    padding: 30px 25px;
+  }
+  &__category {
+    text-transform: uppercase;
+    color: #b2b2b2;
+    font-size: 15px;
+    padding-bottom: 30px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 30px;
+  }
+  &__date {
+    padding-top: 3px;
+    text-align: right;
+    font-size: 15px;
+    line-height: 1em;
+    color: #b2b2b2;
+  }
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .fa-trash {
+    color: #555;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  @keyframes growBox {
+    to {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  &.change-size {
+    animation: growBox 2s;
+    
+  }
+}
